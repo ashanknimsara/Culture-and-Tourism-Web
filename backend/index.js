@@ -13,8 +13,13 @@ app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: false }))
 
 
-//routes
+//Admin
+const AdminRouter = require("./routes/AdminRoutes");
+app.use("/admin", AdminRouter);
+
 //Travel Blog
+const ArticleRouter = require("./routes/ArticleRoutes");
+app.use("/articles", ArticleRouter);
 
 //Accommodations
 
