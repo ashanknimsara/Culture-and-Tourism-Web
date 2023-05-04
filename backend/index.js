@@ -19,6 +19,9 @@ app.use(bodyparser.urlencoded({ extended: false }))
 //Accommodations
 
 //Travel Agencies
+const agencyRouter = require("./Routes/Agency");
+app.use("/Agency", agencyRouter);
+
 
 //Tour Guide
 
