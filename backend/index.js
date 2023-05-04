@@ -27,7 +27,7 @@ const startApp = async () => {
     try {
         await connect(DB);
         success({
-            message: `Successfully connected with the Database ${DB}`,
+            message: `Successfully connected with the Database`,
             badge: true
         })
 
