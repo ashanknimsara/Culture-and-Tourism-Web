@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+
 import "./AdminView.css";
 
 export default function AdminView(){
@@ -50,7 +51,7 @@ export default function AdminView(){
     });
 
     setTimeout(()=>{
-        window.location.replace("http://localhost:3000/viewadmin");
+        window.location.replace("http://localhost:3000/Viewadmin");
     },3000)
 
     }
@@ -99,7 +100,7 @@ export default function AdminView(){
                         <td>{val.contactNo}</td>
                         <td>{val.Description}</td>
                         <td>
-                            <Link to={`/Update/${val._id}`}><button type="button" className="btn-success">Update</button></Link>&nbsp;
+                        <Link to={`/UpdateAgency/${val._id}`}><button type="button" className="btn-success">Update</button></Link>&nbsp;
                             <button onClick={()=>deleteAgencies(val._id)} type="button" className="btndanger">Delete</button>
                         </td>
                     </tr>

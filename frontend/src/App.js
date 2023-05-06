@@ -7,6 +7,7 @@ import TourGuides from "./components/TourGuides";
 import AddAgency from './components/agencies/AddAgency';
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
+import UpdateAgency from "./components/agencies/UpdateAgency";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/AddAgency" element={<AddAgency/>}/>
           <Route path="/ViewAgency" element={<ViewAgencies/>}/>
           <Route path="/viewadmin" element={<AdminView/>}/>
+          <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
+          
         </Routes>
       </BrowserRouter>
     </div>

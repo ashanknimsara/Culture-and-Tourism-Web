@@ -7,7 +7,7 @@ const background = require('../../assets/images/bg.jpg');
 
 export default function AddAgency(){
 
-    const [name, setNname]= useState("");
+    const [name, setName]= useState("");
     const [location, setLocation]= useState("");
     const [email, setEmail]= useState("");
     const [contactNo, setContactNo]= useState("");
@@ -32,7 +32,7 @@ export default function AddAgency(){
             alert(err)
         })
         
-        setNname("");
+        setName("");
         setLocation("");
         setEmail("");
         setContactNo("");
@@ -51,7 +51,7 @@ export default function AddAgency(){
                         <label for="name">Name</label>
                         <input type="text" className="form-control" id="fname" required placeholder="Enter Agency Name" 
                             onChange={(e)=>{
-                                setNname(e.target.value);
+                                setName(e.target.value);
                             }}/>
                     </div>
                     <div className="form-group">
