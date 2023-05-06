@@ -37,11 +37,13 @@ export default function ViewAgencies() {
 
   return (
     <div className="bg" >
+      <Navbar style={{position: 'fixed', zIndex: '9999'}}/>
       <div className="bg-image" style={{backgroundImage: `url(${background})` }}></div>
-      <Navbar/>
+      
       <div className="container1">
         
         <div className="center1">
+          <br/>
           <h1>Travel Agencies</h1>
         </div>
         <div className="center2">
