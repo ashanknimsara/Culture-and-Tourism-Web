@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button } from '@material-ui/core';
-import './AdminHome.css';
+import '../../assets/styles/AdminHome.css';
 import Navbar from "../common/AdminNavbar";
 import { NavLink } from 'react-router-dom'
 

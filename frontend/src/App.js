@@ -7,7 +7,7 @@ import TourGuides from "./components/TourGuides";
 import AddAgency from "./components/agencies/AddAgency";
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
-import AdminHome from "./components/agencies/AdminHome";
+import AdminHome from "./components/AdminHome";
 import ManageAgency from "./components/agencies/ManageAgency";
 import AddBlogPost from "./components/blog/AddBlogPost";
 import Login from "./components/Login";
