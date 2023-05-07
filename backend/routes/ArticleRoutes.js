@@ -5,6 +5,8 @@ const path = require("path");
 const fs = require("fs");
 const Article  = require("../models/ArticleModel");
 const { AdminAuth } = require("../middlewares/AdminAuth");
+const serveStatic = require("serve-static");
+
 //const { AdminToken } = require("../models/AdminToken");
 
 // Configure Multer for storing images
@@ -17,6 +19,7 @@ const storage = multer.diskStorage({
     },
 });
 const upload = multer({ storage });
+
 
 // Localhost:5000/articles/new - POST - Create a new article
 //router.post("/new", AdminAuth, upload.single("image"), async (req, res) => {
@@ -41,41 +44,6 @@ const upload = multer({ storage });
         });
     }
 });
-/*const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "Media");
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname));
-    },
-});
-const upload = multer({ storage });
-
-// Localhost:5000/articles/new - POST - Create a new article
-router.post("/new", upload.single("image"), async (req, res) => {
-    try {
-        const { title, content } = req.body;
-        const image = req.file ? fs.readFileSync(req.file.path) : undefined;
-
-        const article = new Article({ title, content, image });
-        await article.save();
-
-        fs.unlinkSync(req.file.path); // remove file from disk after storing in database
-
-        return res.status(201).json({
-            status: true,
-            message: "Article created successfully",
-            data: article,
-        });
-    } catch (error) {
-        return res.status(500).json({
-            status: false,
-            message: error.message,
-            data: undefined,
-            error: error
-        });
-    }
-});*/
 
 
 // Localhost:5000/articles/all - GET - Get all articles
