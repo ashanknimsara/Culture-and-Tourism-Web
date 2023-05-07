@@ -14,6 +14,8 @@ import NewAdmin from "./components/SignUp";
 
 import UpdateAgency from "./components/agencies/UpdateAgency";
 import GuideForm from "./components/tourGuide/GuideForm";
+import GuideList from "./components/tourGuide/GuideLists";
+import GuideLists from "./components/tourGuide/GuideLists";
 function App() {
   return (
     <div>
@@ -35,6 +37,7 @@ function App() {
           <Route path="/UpdateAgency/:id" element={<UpdateAgency />} />
 
           <Route path="/enterGuide" element={<GuideForm />} />
+          <Route path="/guidelist" element={<GuideLists />} />
         </Routes>
       </BrowserRouter>
     </div>
