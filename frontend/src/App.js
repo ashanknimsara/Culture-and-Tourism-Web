@@ -16,6 +16,7 @@ import UpdateAgency from "./components/agencies/UpdateAgency";
 import GuideForm from "./components/tourGuide/GuideForm";
 import GuideList from "./components/tourGuide/GuideLists";
 import GuideLists from "./components/tourGuide/GuideLists";
+import GuideSingleView from "./components/tourGuide/GuideSingleView";
 function App() {
   return (
     <div>
@@ -38,7 +39,7 @@ function App() {
 
           <Route path="/enterGuide" element={<GuideForm />} />
           <Route path="/guidelist" element={<GuideLists />} />
-          
+          <Route path="/guide" element={<GuideSingleView />} />
         </Routes>
       </BrowserRouter>
     </div>
