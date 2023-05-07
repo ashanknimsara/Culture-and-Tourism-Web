@@ -7,6 +7,11 @@ const { connect } = require("mongoose");
 const { DB, PORT } = require("./config");
 
 const app = express();
+// Serve static files from the "Media" folder
+const serveStatic = require("serve-static");
+app.use("/media", serveStatic("Media"));
+app.use(express.static('Media'))
+
 
 app.use(cors());
 app.use(bodyparser.json());

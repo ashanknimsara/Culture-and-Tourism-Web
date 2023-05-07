@@ -99,3 +99,41 @@
     flex-basis: calc(50% - 20px);
   }
 }
+
+/* Updated code for ViewAgencies component */
+
+.card-img {
+  height: 10px;
+  object-fit: cover;
+}
+
+.card-content {
+  height: 150px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-location {
+  font-size: 18px;
+  color: #6b6b6b;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #6b6b6b;
+  margin-bottom: 10px;
+}
+
+.card-contact {
+  font-size: 16px;
+  color: #6b6b6b;
+}
+
+.textfield {
+  width: 100%;
+  margin-bottom: 30px;
+}

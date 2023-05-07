@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 import "./AddAgency.css";
-import Navbar from "../common/Navbar";
+import Navbar from "../common/AdminNavbar";
 import Footer from "../common/Footer";
 const background = require('../../assets/images/bg.jpg');
 

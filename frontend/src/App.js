@@ -1,22 +1,33 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./components/LandingPage";
-import TravelBlog from "./components/blog/TravelBlog";
 import Accomodations from "./components/Accomodations";
 import TourGuides from "./components/TourGuides";
 import AddAgency from "./components/agencies/AddAgency";
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
 
-import AddBlogPost from "./components/blog/AddBlogPost";
+
+import ViewBlogPost from "./components/blog/ViewBlogPost"
+import TravelBlog from "./components/blog/TravelBlog";
+import AddBlogPost from "./components/blog/AddBlogPost"
+import ManageBlog from "./components/blog/ManageBlog";
+
+
 import Login from "./components/Login";
 import NewAdmin from "./components/SignUp";
 
+import AdminHome from "./components/AdminHome";
+import ManageAgency from "./components/agencies/ManageAgency";
 import UpdateAgency from "./components/agencies/UpdateAgency";
+
+
 import GuideForm from "./components/tourGuide/GuideForm";
 import GuideList from "./components/tourGuide/GuideLists";
-import GuideLists from "./components/tourGuide/GuideLists";
 import GuideSingleView from "./components/tourGuide/GuideSingleView";
+
+
+
 function App() {
   return (
     <div>
@@ -25,21 +36,31 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/accomodations" element={<Accomodations />} />
           <Route path="/tour-guides" element={<TourGuides />} />
-          <Route path="/AddAgency" element={<AddAgency />} />
-          <Route path="/ViewAgency" element={<ViewAgencies />} />
-          <Route path="/viewadmin" element={<AdminView />} />
-
           <Route path="/login" element={<Login />} />
           <Route path="/admin/new-admin" element={<NewAdmin />} />
+
 
           <Route path="/guideform" element={<GuideForm />} />
           <Route path="/showlist" element={<GuideLists />} />
           <Route path="/guideprofile" element={<GuideSingleView />} />
+          
+          <Route path="/admin" element={<AdminHome/>}/>
+        
 
           <Route path="/blog" element={<TravelBlog />} />
-          <Route path="/newblogpost" element={<AddBlogPost />} />
+          <Route path="/blog/:id" element={<ViewBlogPost/>}/>
+          <Route path="/admin/manageblog/" element={<ManageBlog />} />
+          <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
+          
 
-          <Route path="/UpdateAgency/:id" element={<UpdateAgency />} />
+          <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
+          <Route path="/ViewAgency" element={<ViewAgencies/>}/>
+          <Route path="/viewadmin" element={<AdminView/>}/>
+          <Route path="/manage/agency" element={<ManageAgency/>}/>
+          <Route path="/AddAgency" element={<AddAgency />} />
+          
+
+
         </Routes>
       </BrowserRouter>
     </div>
