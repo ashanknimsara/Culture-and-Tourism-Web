@@ -29,7 +29,9 @@ function App() {
           <Route path="/blog" element={<TravelBlog />} />
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
           <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
+
           <Route path="/enterGuide" element={<GuideForm />} />
+          
           <Route path="/ViewAgency" element={<ViewAgencies/>}/>
           <Route path="/viewadmin" element={<AdminView/>}/>
           <Route path="/admin" element={<AdminHome/>}/>
