@@ -9,6 +9,14 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 
 const background = require('../../assets/images/bg.jpg');
+const defaultImg = require('../../assets/images/default.jpg');
+const randomImages = [
+  require('../../assets/images/1.jpg'),
+  require('../../assets/images/2.jpg'),
+  require('../../assets/images/3.jpg'),
+  require('../../assets/images/4.jpg'),
+  require('../../assets/images/5.jpg'),
+];
 
 export default function ViewAgencies() {
   const [agencies, setAgencies] = useState([]);
@@ -33,7 +41,7 @@ export default function ViewAgencies() {
     else if (val.location.toLowerCase().includes(searchTerm.toLowerCase())) {
         return val;
     }
-});
+  });
 
   return (
     <div className="bg" >
@@ -55,10 +63,11 @@ export default function ViewAgencies() {
           />
         </div>
         <div className="row1">
-          {filteredAgencies.map((agency) => (
+          {filteredAgencies.map((agency, index) => (
             <div key={agency._id} className="col-md-4">
               <Card className="mmm">
                 <CardContent>
+                  <img src={randomImages[index % 5] || defaultImg} alt="agency" style={{width: '100%'}} />
                   <Typography variant="h5" component="h2">
                     {agency.name}
                   </Typography>
