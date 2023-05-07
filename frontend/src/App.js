@@ -32,14 +32,14 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin/new-admin" element={<NewAdmin />} />
 
+          <Route path="/guideform" element={<GuideForm />} />
+          <Route path="/showlist" element={<GuideLists />} />
+          <Route path="/guideprofile" element={<GuideSingleView />} />
+
           <Route path="/blog" element={<TravelBlog />} />
           <Route path="/newblogpost" element={<AddBlogPost />} />
 
           <Route path="/UpdateAgency/:id" element={<UpdateAgency />} />
-
-          <Route path="/enterGuide" element={<GuideForm />} />
-          <Route path="/guidelist" element={<GuideLists />} />
-          <Route path="/guide" element={<GuideSingleView />} />
         </Routes>
       </BrowserRouter>
     </div>
