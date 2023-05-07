@@ -8,6 +8,7 @@ const jwt = require("jsonwebtoken");
 
 //Localhost:5000/admin/register  ---> registration
 router.post("/register", (req, res) => {
+  
   Admin.findOne({ email: req.body.email })
     .exec()
     .then((admin) => {
