@@ -10,18 +10,17 @@ import AdminView from "./components/agencies/AdminView";
 
 import ViewBlogPost from "./components/blog/ViewBlogPost"
 import TravelBlog from "./components/blog/TravelBlog";
-
 import AddBlogPost from "./components/blog/AddBlogPost"
-import Login from "./components/Login"
-import NewAdmin from "./components/SignUp"
+
+import Login from "./components/Login";
+import NewAdmin from "./components/SignUp";
+
 
 
 import AdminHome from "./components/AdminHome";
 import ManageAgency from "./components/agencies/ManageAgency";
-import AddBlogPost from "./components/blog/AddBlogPost";
-import Login from "./components/Login";
-import NewAdmin from "./components/SignUp";
 import UpdateAgency from "./components/agencies/UpdateAgency";
+
 
 import GuideForm from "./components/tourGuide/GuideForm";
 
