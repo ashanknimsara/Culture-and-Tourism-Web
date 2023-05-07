@@ -24,22 +24,14 @@ function App() {
           <Route path="/accomodations" element={<Accomodations />} />
           <Route path="/tour-guides" element={<TourGuides />} />
           <Route path="/AddAgency" element={<AddAgency />} />
-          
-          
-
           <Route path="/login" element={<Login />} />
           <Route path="/admin/new-admin" element={<NewAdmin />} />
-
           <Route path="/blog" element={<TravelBlog />} />
-          
-
-         
-
+          <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
+          <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
           <Route path="/enterGuide" element={<GuideForm />} />
-          
           <Route path="/ViewAgency" element={<ViewAgencies/>}/>
           <Route path="/viewadmin" element={<AdminView/>}/>
-          <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
           <Route path="/admin" element={<AdminHome/>}/>
           <Route path="/manage/agency" element={<ManageAgency/>}/>
 
