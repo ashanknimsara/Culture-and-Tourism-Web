@@ -13,6 +13,12 @@ app.use(bodyParser.json());
 
 const URL = process.env.MONGODB_URL; // mongoDB URL
 
+//import guide route
+const Guide = require('./routes/GuideManage')
+// create an endPoint
+app.use("api/guide", Guide);
+
+
 mongoose.connect(URL, {});
 
 const connection = mongoose.connection; //mongoDB connection
