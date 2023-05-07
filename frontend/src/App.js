@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./components/LandingPage";
-import TravelBlog from "./components/blog/TravelBlog";
 import Accomodations from "./components/Accomodations";
 import TourGuides from "./components/TourGuides";
 import AddAgency from './components/agencies/AddAgency';
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
+
+import ViewBlogPost from "./components/blog/ViewBlogPost"
+import TravelBlog from "./components/blog/TravelBlog";
 
 import AddBlogPost from "./components/blog/AddBlogPost"
 import Login from "./components/Login"
@@ -35,6 +37,7 @@ function App() {
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
           
           <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
+          <Route path="/blog/:id" element={<ViewBlogPost/>}/>
           
 
         </Routes>
