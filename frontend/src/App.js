@@ -1,18 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./components/LandingPage";
-import TravelBlog from "./components/blog/TravelBlog";
 import Accomodations from "./components/Accomodations";
 import TourGuides from "./components/TourGuides";
 import AddAgency from "./components/agencies/AddAgency";
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
-import AdminHome from "./components/AdminHome";
-import ManageAgency from "./components/agencies/ManageAgency";
-import AddBlogPost from "./components/blog/AddBlogPost";
+
+
+import ViewBlogPost from "./components/blog/ViewBlogPost"
+import TravelBlog from "./components/blog/TravelBlog";
+import AddBlogPost from "./components/blog/AddBlogPost"
+
 import Login from "./components/Login";
 import NewAdmin from "./components/SignUp";
+
+
+
+import AdminHome from "./components/AdminHome";
+import ManageAgency from "./components/agencies/ManageAgency";
 import UpdateAgency from "./components/agencies/UpdateAgency";
+
+
 import GuideForm from "./components/tourGuide/GuideForm";
 
 function App() {
@@ -35,6 +44,7 @@ function App() {
           <Route path="/newblogpost" element={<AddBlogPost />} />
 
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
+          <Route path="/blog/:id" element={<ViewBlogPost/>}/>
           
           <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
 
@@ -45,6 +55,7 @@ function App() {
           <Route path="/viewadmin" element={<AdminView/>}/>
           <Route path="/admin" element={<AdminHome/>}/>
           <Route path="/manage/agency" element={<ManageAgency/>}/>
+
 
 
         </Routes>
