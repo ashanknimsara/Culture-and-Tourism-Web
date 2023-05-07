@@ -23,6 +23,10 @@ import UpdateAgency from "./components/agencies/UpdateAgency";
 
 
 import GuideForm from "./components/tourGuide/GuideForm";
+import GuideList from "./components/tourGuide/GuideLists";
+import GuideSingleView from "./components/tourGuide/GuideSingleView";
+
+
 
 function App() {
   return (
@@ -34,13 +38,18 @@ function App() {
           <Route path="/tour-guides" element={<TourGuides />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/new-admin" element={<NewAdmin />} />
+
+
+          <Route path="/guideform" element={<GuideForm />} />
+          <Route path="/showlist" element={<GuideLists />} />
+          <Route path="/guideprofile" element={<GuideSingleView />} />
           
           <Route path="/admin" element={<AdminHome/>}/>
         
+
           <Route path="/blog" element={<TravelBlog />} />
           <Route path="/blog/:id" element={<ViewBlogPost/>}/>
           <Route path="/admin/manageblog/" element={<ManageBlog />} />
-          <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
           
 
@@ -50,8 +59,6 @@ function App() {
           <Route path="/manage/agency" element={<ManageAgency/>}/>
           <Route path="/AddAgency" element={<AddAgency />} />
           
-          <Route path="/enterGuide" element={<GuideForm />} />
-
 
 
         </Routes>
