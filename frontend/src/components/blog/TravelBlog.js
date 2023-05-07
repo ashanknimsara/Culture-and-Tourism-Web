@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TravelBlog.css";
+import Navbar from "../common/Navbar";
+import Footer from "../common/Footer";
 
 const TravelBlog = () => {
   const [articles, setArticles] = useState([]);
@@ -12,15 +14,18 @@ const TravelBlog = () => {
   }, []);
 
   return (
+    <div><Navbar style={{position: 'fixed', zIndex: '9999'}}/>
     <div className="article-grid"> {/* Add the article-grid class here */}
       {articles.map((article) => (
         <div className="article-card" key={article._id}> {/* Add the article-card class here */}
-          <img src={`http://localhost:5000/${article.image}`} alt="Article Image" /> {/* Add the alt attribute for accessibility */}
+          <img src={`http://localhost:5000/${article.image}`} alt={`${article.title}`} /> {/* Add the alt attribute for accessibility */}
           <h2>{article.title}</h2>
           <p>{article.content}</p>
-          <a href={`/articles/${article._id}`}>Read More</a> {/* Add a link to the full article */}
+          <a href={`/blog/${article._id}`}>Read More</a> {/* Add a link to the full article */}
         </div>
       ))}
+    </div>
+    <Footer />
     </div>
   );
 };

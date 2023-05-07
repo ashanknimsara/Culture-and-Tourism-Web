@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  padding: 40px;
+  padding: 120px;
+  
 }
 
 /* Style each article card */
@@ -15,6 +16,18 @@
   flex-direction: column;
   overflow: hidden;
 }
+
+.article-card p {
+  flex-grow: 1;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8; /* Change this to the number of lines you want to show */
+  -webkit-box-orient: vertical;
+}
+
 
 .article-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -33,14 +46,7 @@
   padding: 20px;
 }
 
-.article-card p {
-  flex-grow: 1;
-  margin-top: 0;
-  margin-bottom: 0 ;
-  margin-right: 20px;
-  margin-left: 20px;
-  
-}
+
 
 .article-card a {
   color: #333333;
