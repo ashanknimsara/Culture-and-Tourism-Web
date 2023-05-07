@@ -8,6 +8,8 @@ import AddAgency from './components/agencies/AddAgency';
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
 import UpdateAgency from "./components/agencies/UpdateAgency";
+import AdminHome from "./components/agencies/AdminHome";
+import ManageAgency from "./components/agencies/ManageAgency";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route path="/ViewAgency" element={<ViewAgencies/>}/>
           <Route path="/viewadmin" element={<AdminView/>}/>
           <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
-          
+          <Route path="/admin" element={<AdminHome/>}/>
+          <Route path="/manage/agency" element={<ManageAgency/>}/>
+
         </Routes>
       </BrowserRouter>
     </div>
