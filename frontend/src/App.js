@@ -11,6 +11,8 @@ import AdminView from "./components/agencies/AdminView";
 import ViewBlogPost from "./components/blog/ViewBlogPost"
 import TravelBlog from "./components/blog/TravelBlog";
 import AddBlogPost from "./components/blog/AddBlogPost"
+import ManageBlog from "./components/blog/ManageBlog";
+
 
 import Login from "./components/Login";
 import NewAdmin from "./components/SignUp";
@@ -43,8 +45,10 @@ function App() {
 
           <Route path="/newblogpost" element={<AddBlogPost />} />
 
+          <Route path="/admin/manageblog/" element={<ManageBlog />} />
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
           <Route path="/blog/:id" element={<ViewBlogPost/>}/>
+
           
           <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
 
