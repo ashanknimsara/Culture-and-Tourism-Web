@@ -31,7 +31,9 @@ function App() {
           <Route path="/admin/new-admin" element={<NewAdmin />} />
 
           <Route path="/blog" element={<TravelBlog />} />
-          <Route path="/newblogpost" element={<AddBlogPost />} />
+          
+
+         
 
           <Route path="/enterGuide" element={<GuideForm />} />
           

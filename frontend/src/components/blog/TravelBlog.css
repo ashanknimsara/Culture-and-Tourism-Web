@@ -1,0 +1,75 @@
+/* Set up a grid with 3 columns */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 40px;
+}
+
+/* Style each article card */
+.article-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.article-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.article-card img {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.article-card h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 20px;
+}
+
+.article-card p {
+  flex-grow: 1;
+  margin-top: 0;
+  margin-bottom: 0 ;
+  margin-right: 20px;
+  margin-left: 20px;
+  
+}
+
+.article-card a {
+  color: #333333;
+  display: block;
+  padding: 20px;
+  text-align: right;
+  text-decoration: none;
+}
+
+.article-card a:hover {
+  color: #0066cc;
+}
+
+@media (max-width: 768px) {
+  /* Switch to 2 columns on smaller screens */
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Reduce the height of the article cards */
+  .article-card img {
+    height: 150px;
+  }
+  
+  .article-card h2 {
+    font-size: 1.2rem;
+  }
+  
+  .article-card p {
+    font-size: 0.9rem;
+  }
+}
