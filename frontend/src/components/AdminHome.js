@@ -23,7 +23,7 @@ function AdminHome() {
         <Card className="card">
           <CardContent>
             <Typography variant="h5" component="h2">
-              Manage Blogs
+              Manage Travel Blog
             </Typography>
             
             <Button variant="contained" color="primary" className="button">
@@ -34,26 +34,22 @@ function AdminHome() {
         <Card className="card">
           <CardContent>
             <Typography variant="h5" component="h2">
-              Card 3
+              Manage Accomodations
             </Typography>
-            <Typography color="textSecondary">
-              Some text for card 3.
-            </Typography>
+            
             <Button variant="contained" color="primary" className="button">
-              Button 3
+            <NavLink to="#">Accomodations</NavLink>
             </Button>
           </CardContent>
         </Card>
         <Card className="card">
           <CardContent>
             <Typography variant="h5" component="h2">
-              Card 4
+              Manage Tour Guides
             </Typography>
-            <Typography color="textSecondary">
-              Some text for card 4.
-            </Typography>
+            
             <Button variant="contained" color="primary" className="button">
-              Button 4
+            <NavLink to="#">Tour Guides</NavLink>
             </Button>
           </CardContent>
         </Card>
