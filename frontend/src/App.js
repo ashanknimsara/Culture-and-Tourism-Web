@@ -7,9 +7,13 @@ import TourGuides from "./components/TourGuides";
 import AddAgency from './components/agencies/AddAgency';
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
+
 import AddBlogPost from "./components/blog/AddBlogPost"
 import Login from "./components/Login"
 import NewAdmin from "./components/SignUp"
+
+import UpdateAgency from "./components/agencies/UpdateAgency";
+
 
 function App() {
   return (
@@ -23,11 +27,14 @@ function App() {
           <Route path="/ViewAgency" element={<ViewAgencies/>}/>
           <Route path="/viewadmin" element={<AdminView/>}/>
 
+
           <Route path="/login" element={<Login/>}/>
           <Route path="/admin/new-admin" element={<NewAdmin />} />
           
           <Route path="/blog" element={<TravelBlog />} />
           <Route path="/newblogpost" element={<AddBlogPost />} />
+          
+          <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>
           
 
         </Routes>

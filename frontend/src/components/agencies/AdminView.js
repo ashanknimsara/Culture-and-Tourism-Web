@@ -2,8 +2,14 @@ import React, { useState, useEffect} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Navbar from "../common/Navbar";
+import Footer from "../common/Footer";
+
+
 
 import "./AdminView.css";
+
+const background = require('../../assets/images/bg.jpg');
 
 export default function AdminView(){
 
@@ -50,7 +56,7 @@ export default function AdminView(){
     });
 
     setTimeout(()=>{
-        window.location.replace("http://localhost:3000/viewadmin");
+        window.location.replace("http://localhost:3000/Viewadmin");
     },3000)
 
     }
@@ -68,8 +74,20 @@ export default function AdminView(){
     });
 
     return(
+        <>
+        <div className="bg">
+            
+            <div className="bg-image" style={{backgroundImage: `url(${background})` }}></div>
+            <Navbar style={{position: 'fixed', zIndex: '9999'}}/>
+            <br/><br/>
+            
         <div className="admin">
+        <div className="addbtn">
+        <Link to={`/AddAgency`}><button type="button" className="btn-success2">Add New</button></Link>
+        </div>
         <div className="Payment-form1">
+
+            
             <div className="searchbar">
             <input
                 type="text"
@@ -77,7 +95,8 @@ export default function AdminView(){
                 className="search-box"
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
-            /></div>
+            />
+            </div>
             <table className="table1">
                 <thead className="thead-dark1">
                     <tr>
@@ -99,7 +118,7 @@ export default function AdminView(){
                         <td>{val.contactNo}</td>
                         <td>{val.Description}</td>
                         <td>
-                            <Link to={`/Update/${val._id}`}><button type="button" className="btn-success">Update</button></Link>&nbsp;
+                        <Link to={`/UpdateAgency/${val._id}`}><button type="button" className="btn-success">Update</button></Link>&nbsp;
                             <button onClick={()=>deleteAgencies(val._id)} type="button" className="btndanger">Delete</button>
                         </td>
                     </tr>
@@ -109,6 +128,10 @@ export default function AdminView(){
             </table>
         </div>
         </div>
+        <br/>
+        <Footer/>
+        </div>
+        </>
     )
 
 }
