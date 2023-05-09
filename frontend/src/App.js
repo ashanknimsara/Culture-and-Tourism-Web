@@ -22,9 +22,6 @@ import ManageAgency from "./components/agencies/ManageAgency";
 import UpdateAgency from "./components/agencies/UpdateAgency";
 
 
-import GuideForm from "./components/tourGuide/GuideForm";
-import GuideList from "./components/tourGuide/GuideLists";
-import GuideSingleView from "./components/tourGuide/GuideSingleView";
 
 
 
@@ -40,9 +37,7 @@ function App() {
           <Route path="/admin/new-admin" element={<NewAdmin />} />
 
 
-          <Route path="/guideform" element={<GuideForm />} />
-          <Route path="/showlist" element={<GuideLists />} />
-          <Route path="/guideprofile" element={<GuideSingleView />} />
+          
           
           <Route path="/admin" element={<AdminHome/>}/>
         
