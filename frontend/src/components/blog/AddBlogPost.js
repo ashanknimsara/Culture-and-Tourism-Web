@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./AddBlogPost.css";
+import swal from "sweetalert2";
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
 
@@ -23,12 +24,23 @@ export default function AddBlogPost() {
         formData.append("image", image);
 
         axios.post("http://localhost:5000/articles/new", formData).then(() => {
-            alert("Blogpost Added")
-
+            swal.fire({
+                title: "Success!",
+                text: "Blogpost Added",
+                icon: "success",
+                button: false,
+            });
 
         }).catch((err) => {
-            alert(err)
-        })
+            swal.fire({
+                title: "Error!",
+                text: "Couldn't Add BlogPost",
+                icon: "error",
+            });
+        });
+        setTimeout(() => {
+            window.location.replace("http://localhost:3000/admin/manageblog");
+        }, 2500)
 
 
     }
