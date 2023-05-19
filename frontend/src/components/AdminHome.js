@@ -27,7 +27,7 @@ function AdminHome() {
             </Typography>
             
             <Button variant="contained" color="primary" className="button">
-            <NavLink to="#">Blogs</NavLink>
+            <NavLink to="manageblog">Blogs</NavLink>
             </Button>
           </CardContent>
         </Card>
