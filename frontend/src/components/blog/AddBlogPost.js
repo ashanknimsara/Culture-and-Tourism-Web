@@ -3,7 +3,7 @@ import axios from "axios";
 import "./AddBlogPost.css";
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
-const background = require('../../assets/images/bg.jpg');
+
 
 export default function AddBlogPost() {
 
@@ -35,7 +35,6 @@ export default function AddBlogPost() {
 
     return (
         <div className="bg">
-            <div className="bg-image" style={{ backgroundImage: `url(${background})` }}></div>
             <Navbar style={{ position: 'fixed', zIndex: '9999' }} />
             <br />
 
@@ -62,7 +61,7 @@ export default function AddBlogPost() {
                         />
                     </div>
 
-                    <div class="centerb"><button type="submit" className="btn btn-primary">Submit</button></div>
+                    <div class="centerb"><button type="submit" className="btn btn-primary">Publish</button></div>
                 </form>
             </div>
             <br />
