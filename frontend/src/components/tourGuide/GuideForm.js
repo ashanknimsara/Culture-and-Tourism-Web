@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-
+import Navabar from "../common/Navbar";
 import axios from "axios";
 
 const GuideForm = () => {
@@ -37,6 +37,7 @@ const GuideForm = () => {
 
   return (
     <div>
+      <Navabar />
       <div className="register-form">
         <h2 style={{ margin: "20px" }}>Register</h2>
         <Form onSubmit={handleSubmit} style={{ margin: "20px" }}>
@@ -103,7 +104,7 @@ const GuideForm = () => {
               onChange={(e) => setvalidity(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" style={{margin:'10px'}}>
             Register
           </Button>
         </Form>
