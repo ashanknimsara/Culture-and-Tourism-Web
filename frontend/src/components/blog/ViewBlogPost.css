@@ -1,44 +1,6 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .article {
-<<<<<<< Updated upstream
-    margin: 90px auto 80px;
-    max-width: 1000px;
-    padding: 0 64px;
-  }
-  
-  .article img {
-    margin: 32px auto;
-    border-radius: 10px;
-    height: 400px;
-    width: 100%;
-    display:block;
-  }
-  
-  .article h2 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: rgb(48, 48, 48);
-  }
-  .article h5 {
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(48, 48, 48);
-  }
-  
-  .article p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-    text-align: justify;
-  }
-  
-  .article p:not(:last-child) {
-    margin-bottom: 32px;
-  }
-  
-=======
     padding: 0 16px;
   }
 }
@@ -80,4 +42,3 @@
 .article p:not(:last-child) {
   margin-bottom: 32px;
 }
->>>>>>> Stashed changes
