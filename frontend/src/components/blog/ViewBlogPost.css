@@ -8,7 +8,7 @@
   /* Blog post styles */
   .article {
     margin: 90px auto 80px;
-    max-width: 800px;
+    max-width: 1000px;
     padding: 0 64px;
   }
   
@@ -26,9 +26,14 @@
     margin-bottom: 16px;
     color: rgb(48, 48, 48);
   }
+  .article h5 {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(48, 48, 48);
+  }
   
   .article p {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.5;
     margin-bottom: 30px;
     text-align: justify;

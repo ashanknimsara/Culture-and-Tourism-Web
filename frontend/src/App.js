@@ -12,12 +12,13 @@ import ViewBlogPost from "./components/blog/ViewBlogPost"
 import TravelBlog from "./components/blog/TravelBlog";
 import AddBlogPost from "./components/blog/AddBlogPost"
 import ManageBlog from "./components/blog/ManageBlog";
+import EditBlogPost from "./components/blog/EditBlogPost";
 
 
 import Login from "./components/Login";
 import NewAdmin from "./components/SignUp";
 
-import AdminHome from "./components/AdminHome";
+import AdminHome from "./components/common/AdminHome";
 import ManageAgency from "./components/agencies/ManageAgency";
 import UpdateAgency from "./components/agencies/UpdateAgency";
 
@@ -46,6 +47,8 @@ function App() {
           <Route path="/blog/:id" element={<ViewBlogPost/>}/>
           <Route path="/admin/manageblog/" element={<ManageBlog />} />
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
+          <Route path="/admin/manageblog/edit/:id" element={<EditBlogPost/>}
+    />
           
 
           <Route path="/UpdateAgency/:id" element={<UpdateAgency/>}/>

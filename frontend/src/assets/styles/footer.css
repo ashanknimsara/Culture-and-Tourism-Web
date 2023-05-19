@@ -10,16 +10,22 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
+  .pages h5 {
+    font-weight: bold;
+  }
+  .newsletter h5 {
+    font-weight: bold;
+  }
   
   a {
     color: rgb(231, 231, 231);
     text-decoration: none;
   }
-  
   li {
     list-style: none;
   }
   
+ 
   input {
     position: relative;
     height: 100%;
