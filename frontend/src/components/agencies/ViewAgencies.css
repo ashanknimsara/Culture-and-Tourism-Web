@@ -43,6 +43,8 @@
   margin-top: 30px;
 }
 
+
+
 .col-md-4 {
   flex-basis: calc(33.33% - 20px);
   margin-bottom: 20px;
@@ -55,6 +57,12 @@
 
 .mmm:hover {
   transform: scale(1.05);
+}
+
+.mmm img{
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .listaction {
