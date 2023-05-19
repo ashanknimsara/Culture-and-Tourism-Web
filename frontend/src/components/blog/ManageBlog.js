@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../common/Navbar";
+import Navbar from "../common/AdminNavbar";
 import Footer from "../common/Footer";
 import { Link } from "react-router-dom";
 import "./ManageBlog.css";
 
 import axios from "axios";
 import Swal from "sweetalert2";
-
 
 
 const TravelBlog = () => {

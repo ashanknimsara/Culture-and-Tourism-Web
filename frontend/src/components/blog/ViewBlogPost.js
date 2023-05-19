@@ -27,14 +27,21 @@ const Article = () => {
   });
 
   return (
-    <div><Navbar style={{position: 'fixed', zIndex: '9999'}}/>
-    <div className="article">
-      <h2>{article.title}</h2>
-      <img src={`http://localhost:5000/${article.image}`} alt={`${article.title}`} />
-      <p>{article.content}</p>
-      <h5>Date Posted: {formattedDate}</h5>
-    </div>
-    <Footer/>
+    <div>
+      <Navbar style={{ position: "fixed", zIndex: "9999" }} />
+      <div className="article">
+        <h2>{article.title}</h2>
+        <img src={`http://localhost:5000/${article.image}`} alt={article.title} />
+        {article.content.map((paragraph, index) => (
+          <div key={index}>
+            {paragraph.split("\n").map((line, i) => (
+              <p key={i}>{line}</p>
+            ))}
+          </div>
+        ))}
+        <h5>Date Posted: {formattedDate}</h5>
+      </div>
+      <Footer />
     </div>
   );
 };
