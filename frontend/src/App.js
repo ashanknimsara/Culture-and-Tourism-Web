@@ -6,7 +6,7 @@ import TourGuides from "./components/TourGuides";
 import AddAgency from "./components/agencies/AddAgency";
 import ViewAgencies from "./components/agencies/ViewAgencies";
 import AdminView from "./components/agencies/AdminView";
-
+import AgencyDetails from "./components/agencies/AgencyDetails";
 
 import ViewBlogPost from "./components/blog/ViewBlogPost"
 import TravelBlog from "./components/blog/TravelBlog";
@@ -53,6 +53,7 @@ function App() {
           <Route path="/viewadmin" element={<AdminView/>}/>
           <Route path="/manage/agency" element={<ManageAgency/>}/>
           <Route path="/AddAgency" element={<AddAgency />} />
+          <Route path="/AgencyByID/:id" element={<AgencyDetails/>} />
           
 
 

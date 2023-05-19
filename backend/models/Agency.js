@@ -23,7 +23,8 @@ const agencySchema = new Schema({
     Description :{
         type: String,
         required: true
-    }
+    },
+    image: { type: String }
 
 })
 
