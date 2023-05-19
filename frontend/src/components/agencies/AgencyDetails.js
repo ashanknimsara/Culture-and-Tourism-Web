@@ -39,7 +39,7 @@ const AgencyDetails = () => {
   return (
     <div>
       <Navbar style={{ position: 'fixed', zIndex: '9999' }} />
-      <div className="article">
+      <div className="agency">
         <h2>{agency.name}</h2>
         <img src={`http://localhost:5000/${agency.image}`} alt={agency.name} />
         <p><h4>{agency.Description}</h4></p>
