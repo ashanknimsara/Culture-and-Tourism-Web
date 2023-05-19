@@ -110,5 +110,6 @@ body {
   .nav-elements ul li {
     margin-right: unset;
     margin-top: 22px;
+    margin-left:20px;
   }
 }
