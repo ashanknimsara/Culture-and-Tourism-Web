@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./ViewAgencies.css";
 import Navbar from "../common/Navbar";
@@ -7,16 +8,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-
-const background = require('../../assets/images/bg.jpg');
-const defaultImg = require('../../assets/images/default.jpg');
-const randomImages = [
-  require('../../assets/images/1.jpg'),
-  require('../../assets/images/2.jpg'),
-  require('../../assets/images/3.jpg'),
-  require('../../assets/images/4.jpg'),
-  require('../../assets/images/5.jpg'),
-];
 
 export default function ViewAgencies() {
   const [agencies, setAgencies] = useState([]);
@@ -34,28 +25,24 @@ export default function ViewAgencies() {
 
   const filteredAgencies = agencies.filter((val) => {
     if (searchTerm === "") {
-        return val;
+      return val;
     } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return val;
-    }
-    else if (val.location.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return val;
+      return val;
+    } else if (val.location.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return val;
     }
   });
 
   return (
-    <div className="bg" >
-      <Navbar style={{position: 'fixed', zIndex: '9999'}}/>
-      <div className="bg-image" style={{backgroundImage: `url(${background})` }}></div>
-      
+    <div className="bg">
+      <Navbar style={{ position: 'fixed', zIndex: '9999' }} />
       <div className="container1">
-        
         <div className="center1">
-          <br/>
+          <br />
           <h1>Travel Agencies</h1>
         </div>
         <div className="center2">
-        <TextField
+          <TextField
             label="Search for an agency"
             variant="outlined"
             value={searchTerm}
@@ -67,7 +54,7 @@ export default function ViewAgencies() {
             <div key={agency._id} className="col-md-4">
               <Card className="mmm">
                 <CardContent>
-                  <img src={randomImages[index % 5] || defaultImg} alt="agency" style={{width: '100%'}} />
+                  <img src={`http://localhost:5000/${agency.image}`} alt={`${agency.name}`} />
                   <Typography variant="h5" component="h2">
                     {agency.name}
                   </Typography>
@@ -75,22 +62,16 @@ export default function ViewAgencies() {
                     {agency.location}
                   </Typography>
                   <Typography color="textSecondary" gutterBottom>
-                    <strong>Email:</strong> {agency.email}
-                  </Typography>
-                  <Typography color="textSecondary" gutterBottom>
-                    <strong>Contact No:</strong> {agency.contactNo}
-                  </Typography>
-                  <Typography color="textSecondary" gutterBottom>
-                    <strong>Description:</strong> {agency.Description}
+                    <Link to={`/AgencyByID/${agency._id}`}>More Details</Link>
                   </Typography>
                 </CardContent>
               </Card>
             </div>
           ))}
         </div>
-        <br/>
+        <br />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

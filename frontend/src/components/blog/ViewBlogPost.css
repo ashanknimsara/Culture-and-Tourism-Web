@@ -1,39 +1,50 @@
 /* Responsive styles */
 @media (max-width: 768px) {
-    .article {
-      padding: 0 16px;
-    }
-  }
-  
-  /* Blog post styles */
   .article {
-    margin: 90px auto 80px;
-    max-width: 800px;
-    padding: 0 64px;
+    padding: 0 16px;
   }
-  
-  .article img {
-    display: block;
-    margin: 32px auto;
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  
-  .article h2 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: rgb(48, 48, 48);
-  }
-  
-  .article p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 16px;
-    text-align: justify;
-  }
-  
-  .article p:not(:last-child) {
-    margin-bottom: 32px;
-  }
-  
+}
+
+/* Blog post styles */
+.article {
+  margin: 90px auto 80px;
+  max-width: 800px;
+  padding: 0 64px;
+  text-align: center; /* Center align the content */
+}
+
+.article img {
+  display: block;
+  margin: 32px auto;
+  max-width: 100%;
+  border-radius: 50%; /* Make the image circular */
+  width: 200px; /* Set the desired width of the circular image */
+  height: 200px; /* Set the desired height of the circular image */
+  object-fit: cover; /* Maintain the aspect ratio of the image */
+}
+
+.article h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: rgb(48, 48, 48);
+}
+
+.article p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.article p:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.article a {
+  color: blue; /* Change the color of links */
+}
+
+.article a:hover {
+  color: red; /* Change the color of links on hover */
+}
