@@ -50,6 +50,7 @@ const AgencyDetails = () => {
         <h4>
           <a href={`tel:${agency.contactNo}`}>{agency.contactNo}</a>
         </h4>
+        <br/>
       </div>
       <Footer />
     </div>

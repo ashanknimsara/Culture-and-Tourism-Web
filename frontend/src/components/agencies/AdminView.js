@@ -78,7 +78,7 @@ export default function AdminView(){
         <>
         <div className="bg">
             
-            <div className="bg-image" style={{backgroundImage: `url(${background})` }}></div>
+            {/* <div className="bg-image" style={{backgroundImage: `url(${background})` }}></div> */}
             <Navbar style={{position: 'fixed', zIndex: '9999'}}/>
             <br/><br/>
             
@@ -119,7 +119,7 @@ export default function AdminView(){
                         <td>{val.contactNo}</td>
                         <td>{val.Description}</td>
                         <td>
-                        <Link to={`/UpdateAgency/${val._id}`}><button type="button" className="btn-success">Update</button></Link>&nbsp;
+                        <Link to={`/UpdateAgency/${val._id}`}><button type="button" className="btn-success">Edit</button></Link>&nbsp;
                             <button onClick={()=>deleteAgencies(val._id)} type="button" className="btndanger">Delete</button>
                         </td>
                     </tr>

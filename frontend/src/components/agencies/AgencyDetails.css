@@ -10,8 +10,12 @@
   margin: 90px auto 80px;
   max-width: 800px;
   padding: 0 64px;
-  text-align: center; /* Center align the content */
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.055); /* Set the background color with transparency */
+  backdrop-filter: blur(20px); /* Apply a blur effect to the background */
+  border-radius: 10px; /* Add border radius for rounded corners */
 }
+
 
 .agency img {
   display: block;
