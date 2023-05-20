@@ -4,6 +4,7 @@ import swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 import Navbar from "../common/AdminNavbar";
 import Footer from "../common/Footer";
+
 const background = require("../../assets/images/bg.jpg");
 
 const townData = [
@@ -39,6 +40,7 @@ const townData = [
   "Oruwala",
 ];
 
+
 export default function UpdateAgency(props) {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -68,7 +70,7 @@ export default function UpdateAgency(props) {
         });
     }
     getAgency();
-  }, []);
+  }, [id]);
 
   function update(e) {
     e.preventDefault();
@@ -114,6 +116,7 @@ export default function UpdateAgency(props) {
 
   return (
     <div className="bg">
+
       <Navbar style={{ position: "fixed", zIndex: "9999" }} />
       <br />
       <div className="Payment-form" style={{ marginTop: "100px" }}>

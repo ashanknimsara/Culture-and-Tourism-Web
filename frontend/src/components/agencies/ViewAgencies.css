@@ -30,17 +30,20 @@ body {
 }
 
 .container1 {
-  margin-top: 50px;
+  
   margin-left: 50px;
   margin-right: 50px;
+  padding-top: 50px;
 }
 
 .center1 {
   text-align: center;
+ 
 }
 
 .center2 {
   text-align: center;
+ 
 }
 
 .row1 {
@@ -157,7 +160,7 @@ body {
 }
 .card-contact {
   font-size: 16px;
-  color: #6b6b6b;
+  color: #232323;
 }
 
 .textfield {
@@ -197,14 +200,6 @@ body {
   margin-right: 50px;
 }
 
-.center1 {
-  text-align: center;
-}
-
-.center2 {
-  margin-top: 30px;
-  text-align: center;
-}
 
 .row1 {
   display: flex;
@@ -213,6 +208,8 @@ body {
   margin-top: 30px;
   margin-left: 8%;
 }
+
+
 
 .col-md-4 {
   flex-basis: calc(33.33% - 20px);
@@ -322,10 +319,6 @@ body {
   margin-bottom: 10px;
 }
 
-.card-contact {
-  font-size: 16px;
-  color: #6b6b6b;
-}
 
 .textfield {
   width: 80%;

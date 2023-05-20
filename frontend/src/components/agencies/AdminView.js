@@ -10,7 +10,6 @@ import Footer from "../common/Footer";
 
 import "./AdminView.css";
 
-const background = require('../../assets/images/bg.jpg');
 
 export default function AdminView(){
 
@@ -62,23 +61,24 @@ export default function AdminView(){
 
     }
 
-    // Filter the agencies based on the search input
-    const filteredAgencies = agencies.filter((val) => {
-        if (searchTerm === "") {
-            return val;
-        } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-            return val;
-        }
-        else if (val.location.toLowerCase().includes(searchTerm.toLowerCase())) {
-            return val;
-        }
-    });
+   // Filter the agencies based on the search input
+const filteredAgencies = agencies.filter((val) => {
+    if (searchTerm === "") {
+      return true;
+    } else if (
+      val.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      val.location.toLowerCase().includes(searchTerm.toLowerCase())
+    ) {
+      return true;
+    }
+    return false;
+  });
+  
 
     return(
         <>
         <div className="bg">
-            
-            {/* <div className="bg-image" style={{backgroundImage: `url(${background})` }}></div> */}
+
             <Navbar style={{position: 'fixed', zIndex: '9999'}}/>
             <br/><br/>
             
