@@ -84,7 +84,7 @@ const filteredAgencies = agencies.filter((val) => {
             
         <div className="admin">
         <div className="addbtn">
-        <Link to={`/AddAgency`}><button type="button" className="btn-success2">Add New</button></Link>
+        <Link to={`/AddAgency`}><button type="button" className="btn-success2">+ Add New Agency</button></Link>
         </div>
         <div className="Payment-form1">
 
@@ -119,7 +119,7 @@ const filteredAgencies = agencies.filter((val) => {
                         <td>{val.contactNo}</td>
                         <td>{val.Description}</td>
                         <td>
-                        <Link to={`/UpdateAgency/${val._id}`}><button type="button" className="btn-success">Edit</button></Link>&nbsp;
+                        <Link to={`/UpdateAgency/${val._id}`}><button type="button"  className="btn-success">Edit</button></Link>&nbsp;
                             <button onClick={()=>deleteAgencies(val._id)} type="button" className="btndanger">Delete</button>
                         </td>
                     </tr>
