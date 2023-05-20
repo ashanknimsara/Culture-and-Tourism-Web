@@ -31,7 +31,7 @@ export default function UpdateBlog(props) {
         }
       
         getArticle();
-      }, []);
+      }, [id]);
       
 
     function updateBlog(e) {

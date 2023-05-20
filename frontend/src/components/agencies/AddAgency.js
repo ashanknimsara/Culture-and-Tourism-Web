@@ -3,7 +3,6 @@ import axios from "axios";
 import "./AddAgency.css";
 import Navbar from "../common/AdminNavbar";
 import Footer from "../common/Footer";
-const background = require("../../assets/images/bg.jpg");
 
 export default function AddAgency() {
   const [name, setName] = useState("");
