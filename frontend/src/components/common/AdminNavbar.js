@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <h3>Admin Panel</h3>
+          <h5>Admin Panel</h5>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
        <Hamburger />
