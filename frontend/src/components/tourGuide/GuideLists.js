@@ -3,18 +3,39 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Navabar from "../common/Navbar";
 import Footer from "../common/Footer";
+import { useNavigate  } from "react-router-dom";
 
 export default function GuideLists() {
+
+  const navigate = useNavigate();
+
+  const [guideList, setGuideList] = useState([])
+
+  console.log(guideList)
+
   useEffect(() => {
     axios
-      .get("https://api.github.com/users/shubham-singh-coder/repos?per_page=5")
+      .get("http://localhost:5000/api/guide/all")
       .then((res) => {
         console.log(res);
+        setGuideList(res.data)
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
+
+  const handleDelete = (id) => {
+    axios
+    .delete(`http://localhost:5000/guide/${id}`)
+    .then((res) => {
+      console.log(res);
+      window.location.reload()
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
 
   const user = [
     {
@@ -67,7 +88,7 @@ export default function GuideLists() {
             height: "100vh",
           }}
         >
-          {user.map((user) => (
+          {guideList?.map((user) => (
             <div class="card" style={{ margin: "5px" }}>
               <div className="card-body">
                 <h5 className="card-title">
@@ -115,10 +136,12 @@ export default function GuideLists() {
                 </ul>
               </div>
               <div className="card-footer">
-                <button className="btn btn-primary">View</button>
+                <button className="btn btn-primary" onClick={() => navigate(`/viewGuide/${user._id}`)}>View</button>
+                <button className="btn btn-danger mx-3" onClick={() => handleDelete(user._id)}>Delete</button>
               </div>
             </div>
           ))}
+          {guideList?.length === 0 && <p>No guides to display</p>}
         </div>
       }
      

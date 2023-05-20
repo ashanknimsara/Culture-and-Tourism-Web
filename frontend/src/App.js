@@ -20,17 +20,11 @@ import UpdateAgency from "./components/agencies/UpdateAgency";
 import AdminSignup from "./components/common/AdminSignup";
 import AdminLogin from "./components/common/AdminLogin";
 
-import Accomodations from "./components/Accommodation/Accommodation";
-import AddAccommodationPost from "./components/Accommodation/AddAccommodationPost";
-import ViewAccommodation from "./components/Accommodation/ViewAccommodation";
+import GuideForm from "./components/tourGuide/GuideForm";
 
-import ManageAccommodation from "./components/Accommodation/ManageAccommodation";
-import ManageAccommodationPackage from "./components/Accommodation/ManageAccommodationpackage";
-//import AddAccommodationPackagePost from "./components/Accommodation/AddAccommodationPackagePost";
-import AddAccommodationPackagePost from "./components/Accommodation/AddAccommodationpackagePost";
-import UpdateAccommodationPackageForm from "./components/Accommodation/UpdateAccommodationPackageForm";
-import ManageAccommendation from "./components/Accommodation/ManageAccommendation";
-
+import GuideSingleView from "./components/tourGuide/GuideSingleView";
+import UpdateGuideSingleView from "./components/tourGuide/UpdateGuideSingleView";
+import GuideLists from "./components/tourGuide/GuideLists";
 
 function App() {
   return (
@@ -38,8 +32,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/accomodations" element={<Accomodations />} /> */}
-          <Route path="/tour-guides" element={<TourGuides />} />
+          <Route path="/accomodations" element={<Accomodations />} />
+          <Route path="/tour-guides" element={<GuideLists />} />
           <Route path="/login" element={<AdminLogin />} />
 
 
@@ -74,7 +68,10 @@ function App() {
           <Route path="/NewAccommodationPackage/:id" element={<AddAccommodationPackagePost />} />
           <Route path="/UpdateAccommodationPackage/:id" element={<UpdateAccommodationPackageForm />} />
           
-
+          <Route path="/guide" element={<GuideForm/>} />
+          <Route path="/viewGuide/:id" element={<GuideSingleView/>} />
+          <Route path="/viewGuide/:id" element={<UpdateGuideSingleView/>} />
+          <Route path="/allguide" element={<GuideLists/>} />
 
         </Routes>
       </BrowserRouter>

@@ -43,7 +43,7 @@ app.use("/Agency", agencyRouter);
 
 //Tour Guide
 const Guideroute = require("./Routes/guideRoutes");
-app.use("/guide", Guideroute);
+app.use("/api/guide", Guideroute);
 
 const startApp = async () => {
   try {
