@@ -93,7 +93,7 @@ export default function ViewAgencies() {
                   <Typography className="card-description" color="textSecondary" gutterBottom>
                     {agency.description}
                   </Typography>
-                  <Typography className="card-contact" color="textSecondary">
+                  <Typography className="card-contact" >
                     <Link to={`/AgencyByID/${agency._id}`}>More Details</Link>
                   </Typography>
                 </CardContent>
