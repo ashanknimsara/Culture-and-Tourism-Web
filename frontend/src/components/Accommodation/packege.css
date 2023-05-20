@@ -1,0 +1,56 @@
+.Accommodation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .article-table {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .btndanger {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .btndanger:hover {
+    background-color: #c82333;
+  }
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #007bff;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add more styles as needed */
+  

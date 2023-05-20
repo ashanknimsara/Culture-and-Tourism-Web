@@ -67,7 +67,7 @@ function AdminHome() {
             </Typography>
             
             <Button variant="contained" color="primary" className="button">
-              <NavLink to="#">Accommodations</NavLink>
+              <NavLink to="/manage/Accommendation">Accommodations</NavLink>
             </Button>
           </CardContent>
         </Card>

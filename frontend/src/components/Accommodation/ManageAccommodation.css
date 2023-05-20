@@ -1,0 +1,122 @@
+.addbutton{
+    
+    margin-left:50px;
+}
+
+.Accommodation{
+  background-image: url("../../assets/images/Accommodationback.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.article-table{
+  
+    margin-left:40px;
+    margin-right: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Style the table */
+.article-table table {
+    width: auto;
+    border-collapse: collapse;
+    margin-top:20px;
+    margin-bottom:80px;
+    margin-left:50px;
+    margin-right:50px;
+  }
+  
+  /* Style the table header */
+  .article-table th {
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  /* Style the table body */
+  .article-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  /* Style the table image */
+  .article-table img {
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+  }
+  
+  /* Truncate the content to 300 words */
+  .article-table .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
+  
+  /* Style the table buttons */
+  .article-table button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  /* Style the table delete button */
+  .article-table button.delete {
+    background-color: #f44336;
+  }
+  
+  /* Style the table edit button */
+  .article-table button.edit {
+    background-color: #008CBA;
+  }
+  
+  /* Responsive table design */
+  @media only screen and (max-width: 768px) {
+    /* Hide the table header */
+    .article-table thead {
+      display: none;
+    }
+  
+    /* Display the table rows as blocks */
+    .article-table tr {
+      display: block;
+      margin-bottom: 16px;
+      border: none;
+    }
+  
+    /* Display the table data as inline-blocks */
+    .article-table td {
+      display: inline-block;
+      border: none;
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    /* Set the table image width */
+    .article-table img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 8px;
+    }
+  
+    /* Style the table buttons */
+    .article-table button {
+      display: block;
+      margin: 8px auto;
+      width: 100%;
+    }
+  }
+  
