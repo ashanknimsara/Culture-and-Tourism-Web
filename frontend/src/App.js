@@ -43,7 +43,7 @@ function App() {
 
           <Route path="/blog" element={<TravelBlog />} />
           <Route path="/blog/:id" element={<ViewBlogPost/>}/>
-          <Route path="/admin/manageblog/" element={<ManageBlog />} />
+          <Route path="/manage/manageblog" element={<ManageBlog />} />
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
           <Route path="/admin/manageblog/edit/:id" element={<EditBlogPost/>}
     />
