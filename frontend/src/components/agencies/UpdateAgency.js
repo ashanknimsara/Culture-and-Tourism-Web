@@ -81,7 +81,7 @@ export default function UpdateAgency(props) {
 
   return (
     <div className="bg">
-      {/* <div className="bg-image" style={{ backgroundImage: `url(${background})` }}></div> */}
+
       <Navbar style={{ position: 'fixed', zIndex: '9999' }} />
       <br />
       <div className="Payment-form" style={{ marginTop: '100px' }}>

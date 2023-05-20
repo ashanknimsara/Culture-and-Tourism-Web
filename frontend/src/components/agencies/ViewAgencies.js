@@ -84,13 +84,16 @@ export default function ViewAgencies() {
             <div key={agency._id} className="col-md-4">
               <Card className="mmm">
                 <CardContent>
+
                   <img className="card-img" src={`http://localhost:5000/${agency.image}`} alt={`${agency.name}`} />
                   <Typography className="card-title" variant="h5" component="h2">
+
                     {agency.name}
                   </Typography>
                   <Typography className="card-location" color="textSecondary" gutterBottom>
                     {agency.location}
                   </Typography>
+
                   <Typography className="card-description" color="textSecondary" gutterBottom>
                     {agency.description}
                   </Typography>
