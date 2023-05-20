@@ -138,6 +138,7 @@ body {
 
 .card-title {
   font-size: 24px;
+  padding-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -150,7 +151,12 @@ body {
 
 .card-contact {
   font-size: 16px;
-  color: #232323;
+  /* color: #1d1d1d; */
+  
+}
+.card-contact Link {
+  color: #e60000;
+  
 }
 
 .textfield {
