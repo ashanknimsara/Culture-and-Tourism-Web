@@ -28,6 +28,14 @@ const ArticleRouter = require("./routes/ArticleRoutes");
 app.use("/articles", ArticleRouter);
 
 //Accommodations
+//Accommodations
+const AccommodationRoutes = require("./Routes/AccommodationRoutes");
+app.use("/Accommodation", AccommodationRoutes);
+
+//AccommodationPackage
+const AccommodationPackageRoutes = require("./Routes/AccommodationPackage");
+app.use("/AccommodationPackage", AccommodationPackageRoutes);
+
 
 //Travel Agencies
 const agencyRouter = require("./Routes/Agency");

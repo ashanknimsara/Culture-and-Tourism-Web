@@ -1,0 +1,50 @@
+/* Responsive styles */
+@media (max-width: 768px) {
+    .article {
+      padding: 0 16px;
+    }
+  }
+  
+  .Accommodation{
+    background-image: url("../../assets/images/Accommodationback.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* Blog post styles */
+  .article {
+    margin: 90px auto 80px;
+    
+    max-width: 800px;
+    padding: 0 64px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  .article img {
+    display: block;
+    margin: 32px auto;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .article h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: rgb(48, 48, 48);
+  }
+  
+  .article p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+  
+  .article p:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  

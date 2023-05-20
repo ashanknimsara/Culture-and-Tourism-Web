@@ -54,7 +54,7 @@ const Navbar = () => {
               <NavLink to="/manage/agency">Travel Agencies</NavLink>
             </li>
             <li>
-              <NavLink to="/accomodations">Accomodations</NavLink>
+              <NavLink to="/manage/Accommendation">Accomodations</NavLink>
             </li>
             <li>
               <NavLink to="/tour-guides">Tour Guides</NavLink>
