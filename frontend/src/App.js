@@ -21,6 +21,8 @@ import NewAdmin from "./components/SignUp";
 import AdminHome from "./components/common/AdminHome";
 import ManageAgency from "./components/agencies/ManageAgency";
 import UpdateAgency from "./components/agencies/UpdateAgency";
+import AdminSignup from "./components/common/AdminSignup";
+import AdminLogin from "./components/common/AdminLogin";
 
 
 
@@ -34,13 +36,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/accomodations" element={<Accomodations />} />
           <Route path="/tour-guides" element={<TourGuides />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<AdminLogin />} />
           <Route path="/admin/new-admin" element={<NewAdmin />} />
 
 
           
           
           <Route path="/admin" element={<AdminHome/>}/>
+          <Route path="/admin/signup" element={<AdminSignup/>}/>
         
 
           <Route path="/blog" element={<TravelBlog />} />
