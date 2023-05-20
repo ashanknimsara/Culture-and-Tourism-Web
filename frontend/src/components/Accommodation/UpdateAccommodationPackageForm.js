@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./AddAccommodationPost.css";
+import Navbar from "../common/Navbar";
+import Footer from "../common/Footer";
+const background = require('../../assets/images/bg.jpg');
 
 export default function UpdateAccommodationPackageForm({ accommodationPackageId }) {
  // accommodationPackageId == "64682af8fcd36af9c3145bae";
@@ -49,17 +53,22 @@ export default function UpdateAccommodationPackageForm({ accommodationPackageId 
   };
 
   return (
-    <div>
+    <div className="AddAccommodationform">
+      <div className="bg-image" style={{ backgroundImage: `url(${background})` }}></div>
+      <Navbar style={{ position: 'fixed', zIndex: '9999' }} />
+      
+      <div className="blogpost-form" style={{ marginTop: '100px' }}>
+                <div class="center"><h2>Add Accommodation Package</h2></div>
       <h1>Update Accommodation Package</h1>
       <form onSubmit={updateAccommodationPackage}>
         <label>
           Package Title:
-          <input type="text" value={package_title} onChange={(e) => setPackage_title(e.target.value)}
+          <input  className="form-control" type="text" value={package_title} onChange={(e) => setPackage_title(e.target.value)}
           />
         </label>
         <label>
           Price Range:
-          <input
+          <input  className="form-control" 
             type="text"
             value={Price_Range}
             onChange={(e) => setPrice_Range(e.target.value)}
@@ -67,7 +76,7 @@ export default function UpdateAccommodationPackageForm({ accommodationPackageId 
         </label>
         <label>
           Package Description:
-          <input
+          <input  className="form-control" 
             type="text"
             value={package_description}
             onChange={(e) => setPackage_description(e.target.value)}
@@ -75,7 +84,7 @@ export default function UpdateAccommodationPackageForm({ accommodationPackageId 
         </label>
         <label>
           Package Offers Description:
-          <input
+          <input  className="form-control" 
             type="text"
             value={Package_Offers_Description}
             onChange={(e) => setPackage_Offers_Description(e.target.value)}
@@ -83,7 +92,7 @@ export default function UpdateAccommodationPackageForm({ accommodationPackageId 
         </label>
         <label>
           Accommodation ID:
-          <input
+          <input  className="form-control" 
             type="text"
             value={Accommodation_id}
             onChange={(e) => setAccommodation_id(e.target.value)}
@@ -91,6 +100,7 @@ export default function UpdateAccommodationPackageForm({ accommodationPackageId 
         </label>
         <button type="submit">Update</button>
       </form>
+      </div>
     </div>
   );
 }
