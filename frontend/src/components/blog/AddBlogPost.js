@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./AddBlogPost.css";
 import swal from "sweetalert2";
-import Navbar from "../common/Navbar";
+import Navbar from "../common/AdminNavbar";
 import Footer from "../common/Footer";
 
 
