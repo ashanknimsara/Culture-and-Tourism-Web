@@ -4,7 +4,6 @@ import swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
-const background = require('../../assets/images/bg.jpg');
 
 export default function UpdateAgency(props) {
   const [name, setName] = useState("");
@@ -35,7 +34,7 @@ export default function UpdateAgency(props) {
         });
     }
     getAgency();
-  }, []);
+  }, [id]);
 
   function update(e) {
     e.preventDefault();
