@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./components/LandingPage";
-import Accomodations from "./components/Accomodations";
+// import Accomodations from "./components/Accomodations";
 import TourGuides from "./components/TourGuides";
 import AddAgency from "./components/agencies/AddAgency";
 import ViewAgencies from "./components/agencies/ViewAgencies";
@@ -13,10 +13,6 @@ import TravelBlog from "./components/blog/TravelBlog";
 import AddBlogPost from "./components/blog/AddBlogPost"
 import ManageBlog from "./components/blog/ManageBlog";
 import EditBlogPost from "./components/blog/EditBlogPost";
-
-
-import Login from "./components/Login";
-import NewAdmin from "./components/SignUp";
 
 import AdminHome from "./components/common/AdminHome";
 import ManageAgency from "./components/agencies/ManageAgency";
@@ -39,7 +35,6 @@ function App() {
           <Route path="/accomodations" element={<Accomodations />} />
           <Route path="/tour-guides" element={<GuideLists />} />
           <Route path="/login" element={<AdminLogin />} />
-          <Route path="/admin/new-admin" element={<NewAdmin />} />
 
 
           
@@ -50,7 +45,7 @@ function App() {
 
           <Route path="/blog" element={<TravelBlog />} />
           <Route path="/blog/:id" element={<ViewBlogPost/>}/>
-          <Route path="/admin/manageblog/" element={<ManageBlog />} />
+          <Route path="/manage/manageblog" element={<ManageBlog />} />
           <Route path="/admin/manageblog/new" element={<AddBlogPost />} />
           <Route path="/admin/manageblog/edit/:id" element={<EditBlogPost/>}
     />
@@ -62,6 +57,16 @@ function App() {
           <Route path="/manage/agency" element={<ManageAgency/>}/>
           <Route path="/AddAgency" element={<AddAgency />} />
           <Route path="/AgencyByID/:id" element={<AgencyDetails/>} />
+
+          <Route path="/NewAccommodation" element={<AddAccommodationPost />} />
+          <Route path="/accomodations" element={<Accomodations />} />
+          <Route path="/Accommodation/:id" element={<ViewAccommodation/>}/>
+          <Route path="/admin/ManageAccommodation/" element={<ManageAccommodation/>} />
+          <Route path="/admin/ManageAccommodationPackage/" element={<ManageAccommodationPackage/>} />
+          <Route path="/manage/Accommendation" element={<ManageAccommendation />} />
+
+          <Route path="/NewAccommodationPackage/:id" element={<AddAccommodationPackagePost />} />
+          <Route path="/UpdateAccommodationPackage/:id" element={<UpdateAccommodationPackageForm />} />
           
           <Route path="/guide" element={<GuideForm/>} />
           <Route path="/viewGuide/:id" element={<GuideSingleView/>} />

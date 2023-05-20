@@ -48,13 +48,13 @@ const Navbar = () => {
               <NavLink to="/admin">Dashbord</NavLink>
             </li>
             <li>
-              <NavLink to="/blog">Travel Blog</NavLink>
+              <NavLink to="/manage/manageblog">Travel Blog</NavLink>
             </li>
             <li>
               <NavLink to="/manage/agency">Travel Agencies</NavLink>
             </li>
             <li>
-              <NavLink to="/accomodations">Accomodations</NavLink>
+              <NavLink to="/manage/Accommendation">Accomodations</NavLink>
             </li>
             <li>
               <NavLink to="/tour-guides">Tour Guides</NavLink>
@@ -62,12 +62,6 @@ const Navbar = () => {
             <div className="nav__credention__btn__section">
                     {name && (
                         <>
-                            <Link to="/profile">
-                                <button className="nav__btn">
-                                    
-                                    profile
-                                </button>
-                            </Link>
                             <button className="nav__btn" onClick={logout}>
                                 logout
                             </button>
