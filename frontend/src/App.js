@@ -14,10 +14,6 @@ import AddBlogPost from "./components/blog/AddBlogPost"
 import ManageBlog from "./components/blog/ManageBlog";
 import EditBlogPost from "./components/blog/EditBlogPost";
 
-
-import Login from "./components/Login";
-import NewAdmin from "./components/SignUp";
-
 import AdminHome from "./components/common/AdminHome";
 import ManageAgency from "./components/agencies/ManageAgency";
 import UpdateAgency from "./components/agencies/UpdateAgency";
@@ -37,7 +33,6 @@ function App() {
           <Route path="/accomodations" element={<Accomodations />} />
           <Route path="/tour-guides" element={<TourGuides />} />
           <Route path="/login" element={<AdminLogin />} />
-          <Route path="/admin/new-admin" element={<NewAdmin />} />
 
 
           
