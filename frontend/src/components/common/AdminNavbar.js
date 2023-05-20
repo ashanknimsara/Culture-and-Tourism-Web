@@ -1,6 +1,7 @@
 import "../../assets/styles/navbar.css"
-import React, {useState } from "react";
-import { NavLink } from 'react-router-dom'
+
+import React, { useEffect, useState } from "react";
+import { NavLink , Link } from 'react-router-dom'
 
 import { ReactComponent as Hamburger } from '../../assets/images/menu.svg'
 
@@ -10,6 +11,27 @@ const Navbar = () => {
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
   }
+  const [name, setName] = useState(null);
+    useEffect(() => {
+        fetch("http://localhost:5000/admin/profile", {
+            credentials: "include",
+        }).then((response) => {
+            response.json().then((userImp) => {
+                setName(userImp.name);
+            });
+        });
+    }, []);
+    
+  function logout() {
+    fetch("http://localhost:5000/admin/logout", {
+        credentials: "include",
+        method: "POST",
+    })
+    .then(() => {
+        window.location.href = "/login";
+    })
+    .catch(error => console.log(error));
+}
 
   return (
     <nav className="navbar">
@@ -37,6 +59,31 @@ const Navbar = () => {
             <li>
               <NavLink to="/tour-guides">Tour Guides</NavLink>
             </li>
+            <div className="nav__credention__btn__section">
+                    {name && (
+                        <>
+                            <Link to="/profile">
+                                <button className="nav__btn">
+                                    
+                                    profile
+                                </button>
+                            </Link>
+                            <button className="nav__btn" onClick={logout}>
+                                logout
+                            </button>
+                        </>
+                    )}
+                    {!name && (
+                        <>
+                            <Link to="/login">
+                                <button className="nav__btn">login</button>
+                            </Link>
+                            <Link to="/Signup">
+                                <button className="nav__btn">register</button>
+                            </Link>
+                        </>
+                    )}
+                </div>
 
           </ul>
         </div>

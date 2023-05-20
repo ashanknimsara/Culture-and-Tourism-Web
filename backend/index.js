@@ -1,24 +1,26 @@
-const cors = require("cors");
 const express = require("express");
-const bodyparser = require("body-parser");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const { success, error } = require("consola");
 const { connect } = require("mongoose");
 
 const { DB, PORT } = require("./config");
 
 const app = express();
+
+// Enable CORS for all routes and allow credentials
+app.use(cors({ origin: true, credentials: true }));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Serve static files from the "Media" folder
 const serveStatic = require("serve-static");
 app.use("/media", serveStatic("Media"));
-app.use(express.static('Media'))
-
-
-app.use(cors());
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use(express.static("Media"));
 
 //Admin
-const AdminRouter = require("./routes/AdminRoutes");
+const AdminRouter = require("./Routes/AdminRoutes");
 app.use("/admin", AdminRouter);
 
 //Travel Blog

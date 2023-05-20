@@ -1,148 +1,129 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
-const { Admin } = require("../models/Admin");
-const { AdminToken } = require("../models/AdminToken");
-const { AdminAuth } = require("../middlewares/AdminAuth");
+const Admin = require("../models/Admin");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const cookieparser = require("cookie-parser");
 
-//Localhost:5000/admin/register  ---> registration
-router.post("/register", (req, res) => {
-  
-  Admin.findOne({ email: req.body.email })
-    .exec()
-    .then((admin) => {
-      if (admin) {
-        return res.status(401).json({
-          status: false,
-          message: "Email exists",
-          data: undefined,
-        });
-      } else {
-        bcrypt.hash(req.body.password, 10, (err, hash) => {
-          if (err) {
-            return res.status(500).json({
-              status: false,
-              message: "Error, cannot encrypt password",
-              data: undefined,
-            });
-          } else {
-            const admin = new Admin({ ...req.body, password: hash });
-            admin.save((err, doc) => {
-              if (err)
-                return res.json({
-                  status: false,
-                  message: err,
-                  data: undefined,
-                });
+const sec = "kjktjtjtjt";
 
-              return res.status(200).json({
-                status: true,
-                message: "Register Successfully",
-                data: doc,
-              });
-            });
-          }
-        });
-      }
+router.use(cookieparser());
+
+// Signup route
+router.post("/signup", async (req, res) => {
+  const { name, password } = req.body;
+
+  try {
+    const admin = await Admin.create({
+      name,
+      password: bcrypt.hashSync(password, bcrypt.genSaltSync(10)),
     });
+    res.json(admin);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-//Localhost:5000/admin/login -----> admin login
-router.post("/login", (req, res) => {
-  Admin.findOne({ email: req.body.email })
-    .exec()
-    .then((admin) => {
-      if (!admin) {
-        return res.status(401).json({
-          message: "User not found",
-          status: false,
-          data: undefined,
-        });
-      }
+// Login route
+router.post("/login", async (req, res) => {
+  const { name, password } = req.body;
+  const admin = await Admin.findOne({ name });
 
-      bcrypt.compare(
-        req.body.password,
-        admin.password,
-        async (err, result) => {
-          if (err) {
-            return res.status(401).json({
-              status: false,
-              message: "Server Error, authentication failed",
-              data: undefined,
-            });
-          }
+  const passwordOk = bcrypt.compareSync(password, admin.password);
 
-          if (result) {
-            const token = jwt.sign(
-              {
-                email: admin.email,
-                adminId: admin._id,
-              },
-              process.env.JWT_KEY,
-              {
-                expiresIn: "2h",
-              },
-            );
+  if (passwordOk) {
+    // Generate a JWT token and set it as a cookie
+    jwt.sign({ name, id: admin._id }, sec, {}, (err, token) => {
+      if (err) throw err;
 
-            await AdminToken.findOneAndUpdate(
-              { _adminId: admin._id, tokenType: "login" },
-              { token: token },
-              { new: true, upsert: true },
-            );
-            return res.status(200).json({
-              status: true,
-              message: "Login Successfully...",
-
-              data: {
-                token,
-                admin,
-              },
-            });
-          }
-          return res.status(401).json({
-            status: true,
-            message: "Wrong Password ! ",
-            data: undefined,
-          });
-        },
-      );
-    })
-    .catch((err) => {
-      res.status(500).json({
-        status: false,
-        message: "Server Error, authentication failed....",
-        data: undefined,
-      });
+      res.cookie("token", token).json("You are successfully logged in");
     });
+  } else {
+    res.status(400).json("Wrong credentials");
+  }
 });
 
-///Localhost:5000/admin/logout ----> admin logout
-router.get("/logout", AdminAuth, (req, res) => {
-    AdminToken.findOneAndDelete(
-      { _adminId: req.adminId, tokenType: "login" },
-      (err, doc) => {
-        if (err) {
-          return res.status(401).json({
-            status: false,
-            message: "Server error, logout failed",
-          });
-        }
-  
-        if (!doc) {
-          return res.status(401).json({
-            status: false,
-            message: "Invalid token, logout failed",
-          });
-        }
-  
-        return res.status(200).json({
-          status: true,
-          message: "Logout successfully",
-        });
-      },
+// View profile route
+router.get("/profile", async (req, res) => {
+  try {
+    // Get the admin ID from the JWT token
+    const decodedToken = jwt.verify(req.cookies.token, sec);
+    const admin = await Admin.findById(decodedToken.id);
+
+    // Return the admin's profile information
+    res.json({
+      name: admin.name,
+    });
+  } catch (err) {
+    res.status(401).json("Unauthorized");
+  }
+});
+
+// Update profile route
+router.put("/profile", async (req, res) => {
+  try {
+    // Get the admin ID from the JWT token
+    const decodedToken = jwt.verify(req.cookies.token, sec);
+
+    // Find the admin by ID and update their profile information
+    const admin = await Admin.findByIdAndUpdate(
+      decodedToken.id,
+      { $set: req.body },
+      { new: true }
     );
-  });
-  
-  module.exports = router;
-  
+
+    // Return the updated admin information
+    res.json({
+      name: admin.name,
+    });
+  } catch (err) {
+    res.status(401).json("Unauthorized");
+  }
+});
+
+// Delete profile route
+router.delete("/profile", async (req, res) => {
+  try {
+    // Get the admin ID from the JWT token
+    const decodedToken = jwt.verify(req.cookies.token, sec);
+
+    // Find the admin by ID and delete their profile
+    await Admin.findByIdAndDelete(decodedToken.id);
+
+    // Clear the cookie
+    res.clearCookie("token").json("Your account has been deleted");
+  } catch (err) {
+    res.status(401).json("Unauthorized");
+  }
+});
+
+// Logout route
+router.post("/logout", (req, res) => {
+  res.clearCookie("token").json("You have been logged out");
+});
+
+// Get all admins route
+router.get("/admins", async (req, res) => {
+  try {
+    const admins = await Admin.find();
+    res.json(admins);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Delete a specific admin by ID route
+router.delete("/admins/:id", async (req, res) => {
+  try {
+    const deletedAdmin = await Admin.findByIdAndDelete(req.params.id);
+    if (deletedAdmin) {
+      res.json(`Admin with ID ${req.params.id} has been deleted`);
+    } else {
+      res.status(404).json(`Admin with ID ${req.params.id} not found`);
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
