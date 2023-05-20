@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import "./signup.css";
-// import logo from "../../../assets/images/log.png";
 import { Link } from "react-router-dom";
 import Alert from "../../components/alert/Alert";
 
@@ -32,10 +30,10 @@ const AdminSignup = () => {
     <div className="login__container">
       <div className="login__left">
         <div className="login__left__container">
-          <h1 className="login__title">sign up</h1>
+          <h1 className="login__title">Sign Up</h1>
           <form action="" onSubmit={register}>
             <div className="log__conditions">
-              <label className="login__label">name</label>
+              <label className="login__label">Name</label>
               <input
                 type="text"
                 placeholder="Jhon"
@@ -67,7 +65,7 @@ const AdminSignup = () => {
                 className="login__input__combiner"
               />
             </div>
-            <button className="log__btn">sign up</button>
+            <button className="log__btn">Sign Up</button>
           </form>
           <span className="log__span">
             Already have an account?
@@ -85,13 +83,6 @@ const AdminSignup = () => {
           </span>
         </div>
       </div>
-      {/* <div className="login__right">
-        <div className="login__right__container">
-          <div className="log__imager">
-            <img src={logo} alt="log__image" className="log__img" />
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };
