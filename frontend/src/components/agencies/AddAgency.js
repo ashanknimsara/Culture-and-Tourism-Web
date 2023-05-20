@@ -3,7 +3,6 @@ import axios from "axios";
 import "./AddAgency.css";
 import Navbar from "../common/AdminNavbar";
 import Footer from "../common/Footer";
-const background = require("../../assets/images/bg.jpg");
 
 // Sample town data (replace it with the actual list of towns in Sri Lanka)
 const townData = [

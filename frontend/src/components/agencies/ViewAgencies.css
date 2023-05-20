@@ -214,6 +214,8 @@ body {
   margin-left: 8%;
 }
 
+
+
 .col-md-4 {
   flex-basis: calc(33.33% - 20px);
   margin-bottom: 20px;

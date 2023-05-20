@@ -18,37 +18,38 @@ const TravelBlog = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  function deleteArticles(id){
+  function deleteArticles(id) {
     Swal.fire({
-        title: 'Are You Sure?',
-        text: 'Once deleted, You will not able to recover these details !',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#30085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Delete'
+      title: 'Are You Sure?',
+      text: 'Once deleted, You will not able to recover these details !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#30085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Delete'
 
-    }).then((res)=>{
-        if(res.isConfirmed)
-        {axios.delete(`http://localhost:5000/articles/delete/${id}`);
+    }).then((res) => {
+      if (res.isConfirmed) {
+        axios.delete(`http://localhost:5000/articles/delete/${id}`);
         Swal.fire({
-            title: 'Success!',
-            text: 'Deleted Successfully',
-            icon: 'success',
-            showConfirmButton: false,
-            
-    });}
-}).catch((err)=>{
-    Swal.fire({
+          title: 'Success!',
+          text: 'Deleted Successfully',
+          icon: 'success',
+          showConfirmButton: false,
+
+        });
+      }
+    }).catch((err) => {
+      Swal.fire({
         title: 'Error!',
         text: "Couldn't delete your Details",
         icon: 'error',
+      });
     });
-});
-setTimeout(()=>{
-    window.location.replace("http://localhost:3000/admin/manageblog/");
-},3000)
-}
+    setTimeout(() => {
+      window.location.replace("http://localhost:3000/admin/manageblog/");
+    }, 3000)
+  }
 
 
 
@@ -56,11 +57,11 @@ setTimeout(()=>{
 
   return (
     <div>
-       
-      <Navbar style={{position: 'fixed', zIndex: '9999'}}/>
+
+      <Navbar style={{ position: 'fixed', zIndex: '9999' }} />
       <div className="addbutton">
         <Link to={`/admin/manageblog/new`}><button type="button" className="btn-success2">Add New Blog Post</button></Link>
-        </div>
+      </div>
       <div className="article-table">
         <table>
           <thead>
@@ -83,8 +84,10 @@ setTimeout(()=>{
                   />
                 </td>
                 <td>
-                <button onClick={()=>deleteArticles(article._id)} type="button" className="btndanger">Delete</button>
-                  <button>Edit</button>
+                  <button onClick={() => deleteArticles(article._id)} type="button" className="btndanger">Delete</button>
+                  <Link to={`/admin/manageblog/edit/${article._id}`}>
+                    <button>Edit</button>
+                  </Link>
                 </td>
               </tr>
             ))}

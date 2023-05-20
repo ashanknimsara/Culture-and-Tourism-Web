@@ -9,22 +9,22 @@ const Footer = () => {
       <div className="top">
         <div className="pages">
           <ul>
-            <h3>Culture & Tourism</h3>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Travel Blog</a></li>
-            <li><a href="#">Accomodations</a></li>
-            <li><a href="#">Tour Guide</a></li>
+            <h5>Culture & Tourism</h5>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Travel Blog</a></li>
+            <li><a href="/accomodations">Accomodations</a></li>
+            <li><a href="tour-guides">Tour Guide</a></li>
           </ul>
 
           <ul>
-            <h3>About Us</h3>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Our Responsibilities</a></li>
-            <li><a href="#">Our Values</a></li>
+            <h5>About Us</h5>
+            <li><a href="/contac">Contact Us</a></li>
+            <li><a href="/responsibilities">Our Responsibilities</a></li>
+            <li><a href="/values">Our Values</a></li>
           </ul>
         </div>
         <div className="newsletter">
-          <h3>Stay in Touch</h3>
+          <h5>Stay in Touch</h5>
           <form>
             <input
               type="email"
@@ -46,7 +46,7 @@ const Footer = () => {
       </div>
       <div className="info">
         <div className="legal">
-          <a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a>
+          <a href="TermsAndConditions">Terms & Conditions</a><a href="/PrivacyPolicy">Privacy Policy</a>
         </div>
         <div className="copyright">
   {new Date().getFullYear()} Copyright &copy; AF Api
