@@ -24,9 +24,11 @@ import UpdateAgency from "./components/agencies/UpdateAgency";
 import AdminSignup from "./components/common/AdminSignup";
 import AdminLogin from "./components/common/AdminLogin";
 
+import GuideForm from "./components/tourGuide/GuideForm";
 
-
-
+import GuideSingleView from "./components/tourGuide/GuideSingleView";
+import UpdateGuideSingleView from "./components/tourGuide/UpdateGuideSingleView";
+import GuideLists from "./components/tourGuide/GuideLists";
 
 function App() {
   return (
@@ -35,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/accomodations" element={<Accomodations />} />
-          <Route path="/tour-guides" element={<TourGuides />} />
+          <Route path="/tour-guides" element={<GuideLists />} />
           <Route path="/login" element={<AdminLogin />} />
           <Route path="/admin/new-admin" element={<NewAdmin />} />
 
@@ -61,7 +63,10 @@ function App() {
           <Route path="/AddAgency" element={<AddAgency />} />
           <Route path="/AgencyByID/:id" element={<AgencyDetails/>} />
           
-
+          <Route path="/guide" element={<GuideForm/>} />
+          <Route path="/viewGuide/:id" element={<GuideSingleView/>} />
+          <Route path="/viewGuide/:id" element={<UpdateGuideSingleView/>} />
+          <Route path="/allguide" element={<GuideLists/>} />
 
         </Routes>
       </BrowserRouter>

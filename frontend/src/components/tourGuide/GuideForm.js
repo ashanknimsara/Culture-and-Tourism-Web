@@ -18,7 +18,7 @@ const GuideForm = () => {
     console.log("Email:", email);
     console.log("Mobile Number:", mobileNumber);
     axios
-      .post(" ", {
+      .post("http://localhost:5000/guide/send", {
         name: name,
         email: email,
         mobileNumber: mobileNumber,
