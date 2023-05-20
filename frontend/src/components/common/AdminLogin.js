@@ -1,6 +1,5 @@
 import { useState } from "react";
-// import "./login.css";
-// import logo from "../../../assets/images/log.png";
+import "../../assets/styles/Login.css";
 import { Link, Navigate } from "react-router-dom";
 import Alert from "../alert/Alert";
 
@@ -30,24 +29,14 @@ const AdminLogin = () => {
         if (redirect) {
             return <Navigate to={"/admin"} />;
         }
-        function logout() {
-          fetch("http://localhost:5000/admin/logout", {
-              credentials: "include",
-              method: "POST",
-          })
-          .then(() => {
-              window.location.href = "/login";
-          })
-          .catch(error => console.log(error));
-      }
         return (
     <div className="login__container">
       <div className="login__left">
         <div className="login__left__container">
-          <h1 className="login__title">login</h1>
+          <h5 className="login__title">Login</h5>
           <form action="" onSubmit={login}>
             <div className="log__conditions">
-              <label className="login__label">username</label>
+              <label className="login__label">Username</label>
               <input
                 type="input"
                 placeholder="Jhon smith"
@@ -66,11 +55,11 @@ const AdminLogin = () => {
                 onChange={(ev) => setPassword(ev.target.value)}
               />
             </div>
-            <button className="log__btn">login</button>
+            <button className="log__btn">Login</button>
           </form>
           <span className="log__span">
             Have not an Account?
-            <Link to="/signup">
+            <Link to="/admin/signup">
               <span
                 style={{
                   color: "#0C6E68",
@@ -83,17 +72,7 @@ const AdminLogin = () => {
             </Link>
           </span>
         </div>
-        <button className="nav__btn" onClick={logout}>
-                                logout
-                            </button>
       </div>
-      {/* <div className="login__right">
-        <div className="login__right__container">
-          <div className="log__imager">
-            <img src={logo} alt="log__image" className="log__img" />
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

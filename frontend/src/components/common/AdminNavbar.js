@@ -62,12 +62,6 @@ const Navbar = () => {
             <div className="nav__credention__btn__section">
                     {name && (
                         <>
-                            <Link to="/profile">
-                                <button className="nav__btn">
-                                    
-                                    profile
-                                </button>
-                            </Link>
                             <button className="nav__btn" onClick={logout}>
                                 logout
                             </button>
