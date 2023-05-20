@@ -52,10 +52,6 @@ export default function ViewAgencies() {
     <div className="bg">
       <Navbar style={{ position: 'fixed', zIndex: '9999' }} />
       <div className="container1">
-        <div className="center1">
-          <br />
-          <h1>Travel Agencies</h1>
-        </div>
         <div className="center2">
           <TextField
             className="textfield"
