@@ -4,7 +4,7 @@ import axios from "axios";
 export default function UpdateAccommodationPackageForm({ accommodationPackageId }) {
  // accommodationPackageId == "64682af8fcd36af9c3145bae";
 
-  const [id, setid] = useState("64682af8fcd36af9c3145bae");
+  const [id] = useState("64682af8fcd36af9c3145bae");
   const [package_title, setPackage_title] = useState("");
   const [Price_Range, setPrice_Range] = useState("");
   const [package_description, setPackage_description] = useState("");

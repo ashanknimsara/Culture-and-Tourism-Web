@@ -3,7 +3,6 @@ import Footer from "../common/Footer";
 import React, { useEffect, useState } from "react";
 import "./Accommodation.css";
 
-const background = require('../../assets/images/bg.jpg');
 
 function Accommodation() {
   const [accommodations, setaccommodations] = useState([]);

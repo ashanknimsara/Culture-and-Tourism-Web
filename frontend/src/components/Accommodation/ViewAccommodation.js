@@ -30,10 +30,6 @@ const ViewAccommodation = () => {
     fetchAccommodationPackages();
   }, [id]);
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
   if (!accommodation) {
     return <div>Loading...</div>;
   }
