@@ -3,7 +3,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./AddAccommodationPost.css";
 import Navbar from "../common/Navbar";
-import Footer from "../common/Footer";
 const background = require('../../assets/images/bg.jpg');
 
 export default function AddAccommodationpackagePost() {
@@ -12,7 +11,7 @@ export default function AddAccommodationpackagePost() {
   const [Price_Range, setPriceRange] = useState("");
   const [package_description, setPackageDescription] = useState("");
   const [Package_Offers_Description, setPackageOffersDescription] = useState("");
-  const [Accommodation_id, setAccommodationId] = useState(id);
+  const [Accommodation_id] = useState(id);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -26,6 +26,17 @@ import GuideSingleView from "./components/tourGuide/GuideSingleView";
 import UpdateGuideSingleView from "./components/tourGuide/UpdateGuideSingleView";
 import GuideLists from "./components/tourGuide/GuideLists";
 
+import Accomodations from "./components/Accommodation/Accommodation";
+import AddAccommodationPost from "./components/Accommodation/AddAccommodationPost";
+import ViewAccommodation from "./components/Accommodation/ViewAccommodation";
+ 
+import ManageAccommodation from "./components/Accommodation/ManageAccommodation";
+import ManageAccommodationPackage from "./components/Accommodation/ManageAccommodationpackage";
+//import AddAccommodationPackagePost from "./components/Accommodation/AddAccommodationPackagePost";
+import AddAccommodationPackagePost from "./components/Accommodation/AddAccommodationpackagePost";
+import UpdateAccommodationPackageForm from "./components/Accommodation/UpdateAccommodationPackageForm";
+import ManageAccommendation from "./components/Accommodation/ManageAccommendation";
+
 function App() {
   return (
     <div>
