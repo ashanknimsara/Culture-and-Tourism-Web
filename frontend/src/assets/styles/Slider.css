@@ -1,0 +1,44 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    width: 100%; /* Adjust the width based on the number of slides */
+    transition: transform 0.5s;
+  }
+  
+  .slide {
+    flex: 1 0 100%;
+    position: relative;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px; /* Adjust the position of the dots as needed */
+    width: 100%;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(41, 138, 207);
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: white;
+  }
+  

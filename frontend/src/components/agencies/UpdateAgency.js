@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import Navbar from "../common/AdminNavbar";
 import Footer from "../common/Footer";
 
-const background = require("../../assets/images/bg.jpg");
 
 const townData = [
   "Colombo",
